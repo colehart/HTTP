@@ -20,9 +20,10 @@ class Server
     end
   end
 
-  @connection.puts headers
-  @connection.puts"\n"
-  @connection.puts output
-  @connection.close
-
+  def output
+    @connection.puts headers
+    @connection.puts"\n"
+    @connection.puts output
+    @connection.close
+  end
 end

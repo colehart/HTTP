@@ -13,8 +13,5 @@ class ServerTest < Minitest::Test
     assert_nil server.connection
   end
 
-  def test_request_lines_starts_as_empty_array
-    server = Server.new(9292)
-    assert_empty server.request_lines
-  end
+  
 end
