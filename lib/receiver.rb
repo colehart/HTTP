@@ -18,6 +18,7 @@ class Receiver
         line = @connection.gets.chomp
         @request_lines << line
       end
+      @request_lines.inspect
       
     # end
   end

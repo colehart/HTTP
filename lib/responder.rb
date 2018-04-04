@@ -1,6 +1,6 @@
 class Responder
   attr_reader :counter
-  
+
   def initialize
     @counter = 0
   end
@@ -11,4 +11,9 @@ class Responder
 
     @counter += 1
   end
+
+  @connection.puts headers
+  @connection.puts"\n"
+  @connection.puts output
+  @connection.close
 end
