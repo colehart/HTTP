@@ -1,6 +1,6 @@
 require 'socket'
 
-class Server
+class Receiver
   def initialize(port)
     @tcp_server = TCPServer.new(port)
   end
