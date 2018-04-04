@@ -1,10 +1,14 @@
 class Responder
-# Generating a response
-  # counter = 0
-  # loop do
-  #   output = "Hello, World! (#{counter})."
-  #   headers = ["http/1.1 200 ok"]
-  #
-  #   counter += 1
-  # end
+  attr_reader :counter
+  
+  def initialize
+    @counter = 0
+  end
+
+  def respond
+    output = "Hello, World! (#{counter})."
+    headers = ["http/1.1 200 ok"]
+
+    @counter += 1
+  end
 end
