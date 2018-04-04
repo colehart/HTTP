@@ -18,12 +18,9 @@ class Server
       end
       @request_lines.inspect
     end
-  end
 
-  def output
-    @connection.puts headers
-    @connection.puts"\n"
-    @connection.puts output
+    @connection.puts responder.respond
+
     @connection.close
   end
 end
