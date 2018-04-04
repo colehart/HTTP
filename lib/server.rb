@@ -4,7 +4,6 @@ class Server
   def initialize(port)
     @tcp_server = TCPServer.new(port)
     @connection = nil
-    start
   end
 
   def start

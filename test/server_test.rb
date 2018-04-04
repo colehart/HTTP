@@ -9,8 +9,10 @@ class ServerTest < Minitest::Test
   end
 
   def test_connection_starts_as_nil
+    skip
     server = Server.new(9292)
     assert_nil server.connection
+    # Faraday.new(:get, localhost(9292))
   end
 
 
