@@ -1,9 +1,14 @@
 class Responder
-  attr_reader :counter
+  attr_reader :counter,
+              :request_lines
 
   def initialize
     @counter = 0
     @request_lines = []
+  end
+
+  def populate_request_lines(request_lines)
+    @request_lines = request_lines
   end
 
   def respond

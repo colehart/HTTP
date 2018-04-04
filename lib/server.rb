@@ -1,13 +1,10 @@
 require 'socket'
 
 class Server
-  attr_reader :connection,
-              :request_lines
-
   def initialize(port)
     @tcp_server = TCPServer.new(port)
     @connection = nil
-    @request_lines = []
+    start
   end
 
   def start
