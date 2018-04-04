@@ -30,17 +30,17 @@ class ResponderTest < Minitest::Test
     assert_equal "different stuff from server", responder.request_lines
   end
 
-  def test_respond_returns_message
+  def test_respond_returns_output
     responder = Responder.new
-    assert_equal "["http/1.1 200 ok"]\nHello, World! (0).", responder.respond
+    assert_equal "\nHello, World! (0).", responder.respond
   end
 
   def test_counter_increases_by_one_with_each_response
     responder = Responder.new
-    responder.respond
+    responder.count
     assert_equal 1, responder.counter
 
-    responder.respond
+    responder.count
     assert_equal 2, responder.counter
   end
 end

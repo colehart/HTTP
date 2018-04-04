@@ -19,7 +19,9 @@ class Server
       @request_lines.inspect
     end
 
-    @connection.puts responder.respond
+    @connection.puts responder.print_header
+    @connection puts responder.respond
+    responder.count
 
     @connection.close
   end

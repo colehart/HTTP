@@ -11,11 +11,17 @@ class Responder
     @request_lines = server_lines
   end
 
+  def print_header
+    header = ["http/1.1 200 ok"]
+    header
+  end
+
   def respond
     output = "Hello, World! (#{counter})."
-    headers = ["http/1.1 200 ok"]
-    @counter += 1
+    "\n"+output
+  end
 
-    "#{headers}" + "\n" + output
+  def count
+    @counter += 1
   end
 end
