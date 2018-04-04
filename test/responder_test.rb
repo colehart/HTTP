@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/responder.rb'
+require './lib/responder'
 
 class ResponderTest < Minitest::Test
   def test_it_exists

@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/server.rb'
+require './lib/server'
 
 class ServerTest < Minitest::Test
   def test_it_exists
@@ -13,5 +13,5 @@ class ServerTest < Minitest::Test
     assert_nil server.connection
   end
 
-  
+
 end

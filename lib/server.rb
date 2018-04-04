@@ -20,9 +20,13 @@ class Server
     end
 
     @connection.puts responder.print_header
-    @connection puts responder.respond
+    @connection.puts responder.respond
     responder.count
 
+    close_connection
+  end
+
+  def close_connection
     @connection.close
   end
 end
