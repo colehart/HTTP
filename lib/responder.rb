@@ -1,14 +1,9 @@
 class Responder
-  attr_reader :counter,
-              :request_lines
+  attr_reader :request_lines
 
   def initialize
     @counter = 0
     @request_lines = []
-  end
-
-  def populate_request_lines(server_lines)
-    @request_lines = server_lines
   end
 
   def print_header
@@ -16,8 +11,8 @@ class Responder
     header
   end
 
-  def respond
-    output = "Hello, World! (#{counter})."
+  def print_output
+    output = "Hello, World! (#{@counter})."
     "\n"+output
   end
 
