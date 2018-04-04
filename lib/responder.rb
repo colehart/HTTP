@@ -3,6 +3,7 @@ class Responder
 
   def initialize
     @counter = 0
+    @request_lines = []
   end
 
   def respond
@@ -11,9 +12,4 @@ class Responder
 
     @counter += 1
   end
-
-  @connection.puts headers
-  @connection.puts"\n"
-  @connection.puts output
-  @connection.close
 end

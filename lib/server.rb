@@ -1,6 +1,6 @@
 require 'socket'
 
-class Receiver
+class Server
   attr_reader :connection,
               :request_lines
 
@@ -11,7 +11,8 @@ class Receiver
   end
 
   def start
-    # loop do #not sure when it would end
+    responder = Responder.new
+    loop do # not sure when it would end
       @connection = @tcp_server.accept
       line = @connection.gets.chomp
       until line.empty?
@@ -19,7 +20,12 @@ class Receiver
         @request_lines << line
       end
       @request_lines.inspect
-      
-    # end
+    end
   end
+
+  @connection.puts headers
+  @connection.puts"\n"
+  @connection.puts output
+  @connection.close
+
 end
