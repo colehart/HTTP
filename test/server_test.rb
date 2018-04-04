@@ -7,5 +7,4 @@ class ServerTest < Minitest::Test
     server = Server.new(9292)
     assert_instance_of Server, server
   end
-
 end
