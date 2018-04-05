@@ -4,8 +4,8 @@ class Server
   def initialize(port)
     @tcp_server = TCPServer.new(port)
     @connection = nil
-    @responder = Responder.new
     @parser = Parser.new
+    @responder = Responder.new
   end
 
   def run
@@ -23,7 +23,7 @@ class Server
       line = @connection.gets.chomp
       @parser.request_lines << line
     end
-    p @parser.request_lines
+    @parser.parse_lines
   end
 
   def respond
