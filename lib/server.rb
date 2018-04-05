@@ -23,7 +23,7 @@ class Server
       line = @connection.gets.chomp
       @responder.request_lines << line
     end
-    @responder.parse_lines
+    @responder.response
   end
 
   def respond
