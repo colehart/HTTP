@@ -12,6 +12,6 @@ class ServerTest < Minitest::Test
   def test_connection_starts_as_nil
     skip
     response = Faraday.get('http://localhost:9292/hello')
-    assert_equal "Hello World! (0)."
+    assert_equal "Hello World! (0).", response
   end
 end
