@@ -27,20 +27,6 @@ class ResponderTest < Minitest::Test
     assert_equal ["http/1.1 200 ok"], responder.print_header
   end
 
-  def test_print_output_returns_some_output
-    responder = Responder.new
-    path = ("/shutdown")
-    @total_counter = 1
-    assert_equal "Total Requests: 1", responder.print_output(path)
-  end
-
-  def test_print_output_returns_some_other_output
-    responder = Responder.new
-    path = ("/hello")
-    @hello_counter = 1
-    assert_equal "Hello, World! (1).", responder.print_output(path)
-  end
-
   def test_hello_counter_increases_by_one_with_each_response
     responder = Responder.new
     responder.count_hello
@@ -57,15 +43,5 @@ class ResponderTest < Minitest::Test
 
     responder.count_total
     assert_equal 2, responder.total_counter
-  end
-
-  def test_determine_response_grabs_proper_response
-    responder = Responder.new
-    assert_equal "#{Time.now.strftime('%I:%M%p on %A, %B%e, %Y')}", responder.determine_response("/datetime")
-  end
-
-  def test_determine_response_includes_hash_of_responses
-    responder = Responder.new
-    assert_equal "#{Time.now.strftime('%I:%M%p on %A, %B%e, %Y')}", responder.determine_response("/datetime")
   end
 end
