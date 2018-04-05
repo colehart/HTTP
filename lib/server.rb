@@ -18,24 +18,23 @@ class Server
       print ">>"
       path = gets.chomp
       @connection = @tcp_server.accept
-      populate_lines(path)
-      binding.pry
-      respond
+      populate_lines
+      respond(path)
       @connection.close
     end
   end
 
-  def populate_lines(path)
+  def populate_lines
     line = @connection.gets.chomp
     @responder.request_lines << line
     until line.empty?
       line = @connection.gets.chomp
       @responder.request_lines << line
     end
-    @responder.determine_response(path)
   end
 
-  def respond
+  def respond(path)
+    @responder.determine_response(path)
     @connection.puts @responder.print_header
     @connection.puts @responder.print_output(path)
     @responder.count_total
