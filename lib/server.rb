@@ -21,8 +21,9 @@ class Server
       populate_lines
       respond(path)
       @connection.close
-      socket.close while path == "/shutdown"
+      exit while path == "/shutdown"
     end
+    @connection.shutdown(:WR)
   end
 
   def populate_lines
