@@ -6,9 +6,7 @@ class Parser
   end
 
   def parse_lines
-    require "pry";binding.pry
-    p @request_lines.inspect
-    "<pre>" + @request_lines.join["\n"] + "</pre>"
+    response = "<pre>" + @request_lines.join("\n") + "</pre>"
   end
 
   def default_lines

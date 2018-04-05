@@ -19,6 +19,7 @@ class Server
 
   def populate_lines
     line = @connection.gets.chomp
+    @parser.request_lines << line
     until line.empty?
       line = @connection.gets.chomp
       @parser.request_lines << line

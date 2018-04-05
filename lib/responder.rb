@@ -13,8 +13,8 @@ class Responder
   end
 
   def print_output
-    output = "<html><head></head><body>#{@parser.parse_lines}</body></html>"
-    "Hello, World! (#{@counter})."
+    output = "Hello, World! (#{@counter})."
+    # "<html><head></head><body>#{@parser.parse_lines}</body></html>"
     "\n"+output
   end
 
