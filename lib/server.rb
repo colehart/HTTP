@@ -1,6 +1,8 @@
 require 'socket'
-
+require 'pry'
 class Server
+  attr_reader :path
+
   def initialize(port)
     @tcp_server = TCPServer.new(port)
     @connection = nil
@@ -9,11 +11,19 @@ class Server
 
   def run
     loop do
+      puts """
+      Please choose a path:
+      /, /hello, /datetime, or /shutdown
+      """
+      print ">>"
+      path = gets.chomp
       @connection = @tcp_server.accept
       populate_lines
-      respond
+      respond(path)
       @connection.close
+      exit while path == "/shutdown"
     end
+    @connection.shutdown(:WR)
   end
 
   def populate_lines
@@ -23,16 +33,12 @@ class Server
       line = @connection.gets.chomp
       @responder.request_lines << line
     end
-    @responder.response
   end
 
-  def respond
+  def respond(path)
+    @responder.determine_response(path)
     @connection.puts @responder.print_header
-    @connection.puts @responder.print_output
-    @responder.count
+    @connection.puts @responder.print_output(path)
+    path == "/hello" ? (@responder.count_hello & @responder.count_total) : @responder.count_total
   end
-
-  # def close_connection
-  #   @connection.close #will do later with shutdown. as of iter0, returns nil and breaks for iterating counter.
-  # end
 end

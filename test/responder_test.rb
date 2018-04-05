@@ -34,11 +34,11 @@ class ResponderTest < Minitest::Test
     assert_equal ["http/1.1 200 ok"], responder.print_header
   end
 
-  def test_print_output_returns_output
-    skip
-    responder = Responder.new
-    assert_equal "\n<html><head></head><body></body></html>", responder.print_output
-  end
+  # def test_print_output_returns_output
+  #   skip
+  #   responder = Responder.new
+  #   assert_equal "\n<html><head></head><body></body></html>", responder.print_output
+  # end
 
   def test_counter_increases_by_one_with_each_response
     responder = Responder.new

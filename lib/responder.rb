@@ -3,25 +3,17 @@ require './lib/parser_module'
 class Responder
   include Parser
 
-  attr_reader :request_lines,
-              :counter
-
   def initialize
-    @counter = 0
     @request_lines = []
+    @hello_counter = 0
+    @total_counter = 0
   end
 
   def print_header
-    header = ["http/1.1 200 ok"]
+    ["http/1.1 200 ok"]
   end
 
-  def print_output
-    # output = "Hello, World! (#{@counter})."
-    output = "<html><head></head><body>#{response}</body></html>"
-    "\n"+output
-  end
-
-  def count
-    @counter += 1
+  def print_output(path)
+     "\n<html><head></head><body>#{determine_response(path)}</body></html>"
   end
 end
