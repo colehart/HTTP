@@ -3,7 +3,8 @@ require './lib/parser_module'
 class Responder
   include Parser
 
-  attr_reader :request_lines
+  attr_reader :request_lines,
+              :counter
 
   def initialize
     @counter = 0
