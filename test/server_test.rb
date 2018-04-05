@@ -9,9 +9,9 @@ class ServerTest < Minitest::Test
     assert_instance_of Server, server
   end
 
-  # def test_connection_starts_as_nil
-  #   skip
-  #   server = Faraday.get('http://localhost:9292/')
-  #   assert_nil server.connection
-  # end
+  def test_connection_starts_as_nil
+    skip
+    response = Faraday.get('http://localhost:9292/hello')
+    assert_equal "Hello World! (0)."
+  end
 end
