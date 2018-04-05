@@ -3,8 +3,8 @@ require './lib/parser_module'
 class Responder
   include Parser
 
-  def initialize
-    @request_lines = []
+  def initialize(request_lines)
+    @request_lines = request_lines
     @hello_counter = 0
     @total_counter = 0
   end
