@@ -20,18 +20,17 @@ module Parser
   def determine_response(path)
     possible_responses = {
       "/": default_response,
-      "/hello": [hello_response, count_hello],
+      "/hello": hello_response,
       "/datetime": datetime_response,
       "/shutdown": shutdown_response
     }
-    possible_responses[:path]
+    possible_responses[path.to_sym]
   end
 # =end
   def default_response
     request_words = @request_lines.map do |line|
       line.split(' ')
     end
-
     """
     <pre>
     Verb: #{request_words[0][0]}
@@ -46,7 +45,6 @@ module Parser
   end
 
   def hello_response
-    count_hello
     "Hello, World! (#{@hello_counter})."
   end
 
