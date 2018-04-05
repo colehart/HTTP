@@ -1,7 +1,10 @@
 require 'socket'
 
 class Server
+  attr_reader :path
+
   def initialize(port)
+    @path = ""
     @tcp_server = TCPServer.new(port)
     @connection = nil
     @responder = Responder.new
@@ -9,6 +12,12 @@ class Server
 
   def run
     loop do
+      puts """
+      Please choose a path:
+      /, /hello, /datetime, or /shutdown
+      """
+      print ">>"
+      path = gets.chomp
       @connection = @tcp_server.accept
       populate_lines
       respond

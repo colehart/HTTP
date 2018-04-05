@@ -7,9 +7,22 @@ class Responder
               :counter
 
   def initialize
-    @total_counter = 0
     @request_lines = []
-    @path = ARGV[0]
+    @hello_counter = 0
+    @total_counter = 0
+  end
+
+  def determine_response
+    if @path = "/"
+      default_response
+    elsif @path = "/hello"
+      "Hello, World! (#{@hello_counter})."
+      count_hello
+    elsif @path = "/datetime"
+      "#{Time.now.strftime('%I:%M%p on %A, %B%e, %Y')}"
+    elsif @path = "/shutdown"
+      "Total Requests: #{@total_counter})"
+    end
   end
 
   def print_header
@@ -17,15 +30,20 @@ class Responder
   end
 
   def print_output
-    request_words = @request_lines.map do |line|
-      line.split(' ')
+    # request_words = @request_lines.map do |line|
+    #   line.split(' ')
     end
-    # output = "Hello, World! (#{@counter})."
-    output = "<html><head></head><body>#{response}</body></html>"
+    output =
+    count_total
+     "<html><head></head><body>#{determine_response}</body></html>"
     "\n"+output
   end
 
-  def total_count
+  def count_hello
+    @hello_counter += 1
+  end
+
+  def count_total
     @total_counter += 1
   end
 end
