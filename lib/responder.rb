@@ -1,6 +1,10 @@
+require './lib/parser_module'
+
 class Responder
-  attr_reader :counter,
-              :request_lines
+  include Parser
+
+  attr_reader :request_lines,
+              :counter
 
   def initialize
     @counter = 0
@@ -9,11 +13,11 @@ class Responder
 
   def print_header
     header = ["http/1.1 200 ok"]
-    # header
   end
 
   def print_output
-    output = "Hello, World! (#{@counter})."
+    # output = "Hello, World! (#{@counter})."
+    output = "<html><head></head><body>#{response}</body></html>"
     "\n"+output
   end
 

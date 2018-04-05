@@ -8,7 +8,7 @@ class Server
   end
 
   def run
-    loop do # not sure when it would end
+    loop do
       @connection = @tcp_server.accept
       populate_lines
       respond
@@ -18,11 +18,12 @@ class Server
 
   def populate_lines
     line = @connection.gets.chomp
+    @responder.request_lines << line
     until line.empty?
       line = @connection.gets.chomp
       @responder.request_lines << line
     end
-    p @responder.request_lines
+    @responder.response
   end
 
   def respond
