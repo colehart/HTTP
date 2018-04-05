@@ -5,7 +5,7 @@ class Responder
 
   def initialize
     @request_lines = []
-    @hello_counter = 0 #still need right counter method call time
+    @hello_counter = 0
     @total_counter = 0
   end
 
@@ -15,8 +15,5 @@ class Responder
 
   def print_output(path)
      "\n<html><head></head><body>#{determine_response(path)}</body></html>"
-     # while path == "/hello" do
-     #   count_hello
-     # end
   end
 end

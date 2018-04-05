@@ -21,6 +21,7 @@ class Server
       populate_lines
       respond(path)
       @connection.close
+      socket.close while path == "/shutdown"
     end
   end
 
@@ -39,8 +40,4 @@ class Server
     @connection.puts @responder.print_output(path)
     path == "/hello" ? (@responder.count_hello & @responder.count_total) : @responder.count_total
   end
-
-  # def close_connection
-  #   @connection.close #will do later with shutdown. as of iter0, returns nil and breaks for iterating counter.
-  # end
 end
