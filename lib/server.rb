@@ -7,11 +7,11 @@ class Server
     @responder = Responder.new
   end
 
-  def start
+  def run
     loop do # not sure when it would end
       @connection = @tcp_server.accept
       populate_lines
-      create_response
+      respond
       @connection.close
     end
   end
@@ -25,7 +25,7 @@ class Server
     p @responder.request_lines
   end
 
-  def create_response
+  def respond
     @connection.puts @responder.print_header
     @connection.puts @responder.print_output
     @responder.count
