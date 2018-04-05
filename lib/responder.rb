@@ -1,5 +1,6 @@
 class Responder
-  attr_reader :request_lines
+  attr_reader :counter,
+              :request_lines
 
   def initialize
     @counter = 0
@@ -8,7 +9,7 @@ class Responder
 
   def print_header
     header = ["http/1.1 200 ok"]
-    header
+    # header
   end
 
   def print_output

@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
+require './test/test_helper'
 require './lib/responder'
 
 class ResponderTest < Minitest::Test
@@ -17,7 +16,7 @@ class ResponderTest < Minitest::Test
     responder = Responder.new
     assert_empty responder.request_lines
   end
-
+=begin
   def test_request_lines_populates
     responder = Responder.new
     responder.populate_request_lines("stuff from server")
@@ -29,10 +28,15 @@ class ResponderTest < Minitest::Test
     responder.populate_request_lines("different stuff from server")
     assert_equal "different stuff from server", responder.request_lines
   end
-
-  def test_respond_returns_output
+=end
+  def test_print_header_returns_header
     responder = Responder.new
-    assert_equal "\nHello, World! (0).", responder.respond
+    assert_equal ["http/1.1 200 ok"], responder.print_header
+  end
+
+  def test_print_output_returns_output
+    responder = Responder.new
+    assert_equal "\nHello, World! (0).", responder.print_output
   end
 
   def test_counter_increases_by_one_with_each_response
