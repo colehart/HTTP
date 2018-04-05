@@ -1,7 +1,7 @@
 class Responder
+  include Parser
   def initialize
     @counter = 0
-    @parser = Parser.new
   end
 
   # def response
@@ -13,8 +13,10 @@ class Responder
   end
 
   def print_output
-    output = "Hello, World! (#{@counter})."
-    # "<html><head></head><body>#{@parser.parse_lines}</body></html>"
+    parser = Parser.new
+
+    # output = "Hello, World! (#{@counter})."
+    response = "<html><head></head><body>#{parser.response}</body></html>"
     "\n"+output
   end
 

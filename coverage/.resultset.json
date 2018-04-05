@@ -1,30 +1,36 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/colehart/turing/1module/HTTP/lib/responder.rb": [
-        1,
-        1,
-        null,
-        1,
-        5,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
+      "/Users/colehart/turing/1module/HTTP/lib/parser.rb": [
         1,
         1,
         null,
         null,
         1,
-        2,
+        4,
+        4,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1522890680
+    "timestamp": 1522899231
   }
 }

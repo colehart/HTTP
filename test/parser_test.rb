@@ -11,6 +11,16 @@ class ParserTest < Minitest::Test
     parser = Parser.new
     assert_empty parser.request_lines
   end
+
+  def test_response_starts_as_empty_string
+    parser = Parser.new
+    assert_equal "", parser.response
+  end
+
+  def test_parse_lines_generates_new_response
+    parser = Parser.new
+    refute_equal "", parser.parse_lines
+  end
 =begin
   def test_request_lines_populates
     parser = Parser.new
