@@ -1,5 +1,7 @@
 module Parser
-  attr_reader :request_lines
+  attr_reader :request_lines,
+              :hello_counter,
+              :total_counter
 
   def determine_response(path)
     possible_responses = {

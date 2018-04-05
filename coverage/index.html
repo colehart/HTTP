@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-04T22:19:06-06:00">2018-04-04T22:19:06-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-05T04:47:22-06:00">2018-04-05T04:47:22-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">61.22%</span></span>
+    (<span class="covered_percent"><span class="red">63.77%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.83
+       <span class="green">
+         1.3
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>49</b> relevant lines. 
-    <span class="green"><b>30</b> lines covered</span> and
-    <span class="red"><b>19</b> lines missed </span>
+    <b>69</b> relevant lines. 
+    <span class="green"><b>44</b> lines covered</span> and
+    <span class="red"><b>25</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,31 +52,31 @@
       
       <tr>
         <td class="strong"><a href="#ac05881ddd84d90180e7b930b23e022acbe1381b" class="src_link" title="lib/parser_module.rb">lib/parser_module.rb</a></td>
-        <td class="red strong">40.0 %</td>
+        <td class="red strong">73.68 %</td>
+        <td>52</td>
         <td>19</td>
+        <td>14</td>
         <td>5</td>
-        <td>2</td>
-        <td>3</td>
-        <td>0.4</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#937c35577cf355c256733cac4acfe21a0d7a253d" class="src_link" title="lib/responder.rb">lib/responder.rb</a></td>
-        <td class="yellow strong">85.71 %</td>
-        <td>27</td>
-        <td>14</td>
-        <td>12</td>
-        <td>2</td>
-        <td>1.6</td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>4.1</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#4d811ac4e32e57e863c450fb78a441298185ea05" class="src_link" title="lib/server.rb">lib/server.rb</a></td>
-        <td class="red strong">39.13 %</td>
-        <td>38</td>
-        <td>23</td>
-        <td>9</td>
-        <td>14</td>
+        <td class="red strong">37.5 %</td>
+        <td>48</td>
+        <td>32</td>
+        <td>12</td>
+        <td>20</td>
         <td>0.4</td>
       </tr>
       
@@ -109,11 +109,11 @@
         <div class="source_table" id="ac05881ddd84d90180e7b930b23e022acbe1381b">
   <div class="header">
     <h3>lib/parser_module.rb</h3>
-    <h4><span class="red">40.0 %</span> covered</h4>
+    <h4><span class="red">73.68 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>19</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -129,106 +129,304 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  def response</code>
+          <code class="ruby">  attr_reader :request_lines,</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="3">
           
           
-          <code class="ruby">    request_words = @request_lines.map do |line|</code>
+          <code class="ruby">              :hello_counter,</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby">      line.split(&#39; &#39;)</code>
+          <code class="ruby">              :total_counter</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">  def determine_response(path)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">    &quot;&quot;&quot;</code>
+          <code class="ruby">    possible_responses = {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">    &lt;pre&gt;</code>
+          <code class="ruby">      &quot;/&quot;: default_response,</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">    Verb: #{request_words[0][0]}</code>
+          <code class="ruby">      &quot;/hello&quot;: hello_response,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    Path: #{request_words[0][1]}</code>
+          <code class="ruby">      &quot;/datetime&quot;: datetime_response,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">    Protocol: #{request_words[0][2]}</code>
+          <code class="ruby">      &quot;/shutdown&quot;: shutdown_response</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">    Host: #{request_words[1][1].split(&#39;:&#39;)[0]}</code>
+          <code class="ruby">    }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">    Port: #{request_words[1][1].split(&#39;:&#39;)[1]}</code>
+          <code class="ruby">    possible_responses[path.to_sym]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    Origin: #{request_words[1][1].split(&#39;:&#39;)[0]}</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">    Accept: #{request_words[6][1]}</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    &lt;/pre&gt;</code>
+          <code class="ruby">  def default_response</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="4" data-linenumber="17">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    request_words = @request_lines.map do |line|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">      line.split(&#39; &#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">    &quot;&quot;&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    &lt;pre&gt;</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="22">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    Verb: #{request_words[0][0]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    Path: #{request_words[0][1]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    Protocol: #{request_words[0][2]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    Host: #{request_words[1][1].split(&#39;:&#39;)[0]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">    Port: #{request_words[1][1].split(&#39;:&#39;)[1]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    Origin: #{request_words[1][1].split(&#39;:&#39;)[0]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">    Accept: #{request_words[6][1]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    &lt;/pre&gt;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    &quot;&quot;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def hello_response</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
+          
+          <code class="ruby">    &quot;Hello, World! (#{@hello_counter}).&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def count_hello</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @hello_counter += 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def datetime_response</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="42">
+          
+          
+          <code class="ruby">    &quot;#{Time.now.strftime(&#39;%I:%M%p on %A, %B%e, %Y&#39;)}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def shutdown_response</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">    &quot;Total Requests: #{@total_counter}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def count_total</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="50">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @total_counter += 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">end</code>
@@ -242,11 +440,11 @@
         <div class="source_table" id="937c35577cf355c256733cac4acfe21a0d7a253d">
   <div class="header">
     <h3>lib/responder.rb</h3>
-    <h4><span class="yellow">85.71 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -286,130 +484,82 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_reader :request_lines,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">              :counter</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
-          
-          <code class="ruby">    @counter = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="11">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="12" data-linenumber="7">
+          <span class="hits">12</span>
           
           <code class="ruby">    @request_lines = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="12" data-linenumber="8">
+          <span class="hits">12</span>
+          
+          <code class="ruby">    @hello_counter = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="9">
+          <span class="hits">12</span>
+          
+          <code class="ruby">    @total_counter = 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def print_header</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    header = [&quot;http/1.1 200 ok&quot;]</code>
+          <code class="ruby">    [&quot;http/1.1 200 ok&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  def print_output</code>
+          <code class="ruby">  def print_output(path)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
+          
+          <code class="ruby">     &quot;\n&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;#{determine_response(path)}&lt;/body&gt;&lt;/html&gt;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">    # output = &quot;Hello, World! (#{@counter}).&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
-          
-          <code class="ruby">    output = &quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;#{response}&lt;/body&gt;&lt;/html&gt;&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">    &quot;\n&quot;+output</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def count</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @counter += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>
@@ -423,11 +573,11 @@
         <div class="source_table" id="4d811ac4e32e57e863c450fb78a441298185ea05">
   <div class="header">
     <h3>lib/server.rb</h3>
-    <h4><span class="red">39.13 %</span> covered</h4>
+    <h4><span class="red">37.5 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <b>32</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>20</b> lines missed.</span>
     </div>
   </div>
   
@@ -440,10 +590,10 @@
           <code class="ruby">require &#39;socket&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">require &#39;pry&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -455,208 +605,268 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(port)</code>
+          <code class="ruby">  attr_reader :path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="5">
           
-          <code class="ruby">    @tcp_server = TCPServer.new(port)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    @connection = nil</code>
+          <code class="ruby">  def initialize(port)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
+          <code class="ruby">    @tcp_server = TCPServer.new(port)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @connection = nil</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
           <code class="ruby">    @responder = Responder.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def run</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
           <code class="ruby">    loop do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">      @connection = @tcp_server.accept</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
-          
-          <code class="ruby">      populate_lines</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">      respond</code>
+          <code class="ruby">      intro</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
+          <code class="ruby">      path = gets.chomp</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">      @connection = @tcp_server.accept</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">      populate_lines</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">      respond(path)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
           <code class="ruby">      @connection.close</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def populate_lines</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
           
           
-          <code class="ruby">    line = @connection.gets.chomp</code>
+          <code class="ruby">      exit while path == &quot;/shutdown&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">    @responder.request_lines &lt;&lt; line</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">    until line.empty?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">      line = @connection.gets.chomp</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
-          
-          <code class="ruby">      @responder.request_lines &lt;&lt; line</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    end</code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">    @connection.shutdown(:WR)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def intro</code>
+        </li>
+      
         <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">    @responder.response</code>
+          <code class="ruby">    puts &quot;&quot;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    Please choose a path:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    /, /hello, /datetime, or /shutdown</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
           
-          <code class="ruby">  def respond</code>
+          
+          <code class="ruby">    &quot;&quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">    @connection.puts @responder.print_header</code>
+          <code class="ruby">    print &quot;&gt;&gt;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
-          
-          <code class="ruby">    @connection.puts @responder.print_output</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
-          
-          <code class="ruby">    @responder.count</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # def close_connection</code>
+          <code class="ruby">  def populate_lines</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
-          <code class="ruby">  #   @connection.close #will do later with shutdown. as of iter0, returns nil and breaks for iterating counter.</code>
+          <code class="ruby">    line = @connection.gets.chomp</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">    @responder.request_lines &lt;&lt; line</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">    until line.empty?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">      line = @connection.gets.chomp</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
+          
+          <code class="ruby">      @responder.request_lines &lt;&lt; line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def respond(path)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">    @responder.determine_response(path)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">    @connection.puts @responder.print_header</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">    @connection.puts @responder.print_output(path)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">    path == &quot;/hello&quot; ? (@responder.count_hello &amp; @responder.count_total) : @responder.count_total</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">end</code>

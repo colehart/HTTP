@@ -7,45 +7,65 @@ class ResponderTest < Minitest::Test
     assert_instance_of Responder, responder
   end
 
-  def test_counter_starts_at_zero
-    responder = Responder.new
-    assert_equal 0, responder.counter
-  end
-
   def test_request_lines_starts_as_empty_array
     responder = Responder.new
     assert_empty responder.request_lines
   end
-=begin
-  def test_request_lines_populates
+
+  def test_hello_counter_starts_at_zero
     responder = Responder.new
-    responder.populate_request_lines("stuff from server")
-    assert_equal "stuff from server", responder.request_lines
+    assert_equal 0, responder.hello_counter
   end
 
-  def test_request_lines_populates_differently
+  def test_total_counter_starts_at_zero
     responder = Responder.new
-    responder.populate_request_lines("different stuff from server")
-    assert_equal "different stuff from server", responder.request_lines
+    assert_equal 0, responder.total_counter
   end
-=end
+
   def test_print_header_returns_header
     responder = Responder.new
     assert_equal ["http/1.1 200 ok"], responder.print_header
   end
 
-  # def test_print_output_returns_output
-  #   skip
-  #   responder = Responder.new
-  #   assert_equal "\n<html><head></head><body></body></html>", responder.print_output
-  # end
-
-  def test_counter_increases_by_one_with_each_response
+  def test_print_output_returns_some_output
     responder = Responder.new
-    responder.count
-    assert_equal 1, responder.counter
+    path = ("/shutdown")
+    @total_counter = 1
+    assert_equal "Total Requests: 1", responder.print_output(path)
+  end
 
-    responder.count
-    assert_equal 2, responder.counter
+  def test_print_output_returns_some_other_output
+    responder = Responder.new
+    path = ("/hello")
+    @hello_counter = 1
+    assert_equal "Hello, World! (1).", responder.print_output(path)
+  end
+
+  def test_hello_counter_increases_by_one_with_each_response
+    responder = Responder.new
+    responder.count_hello
+    assert_equal 1, responder.hello_counter
+
+    responder.count_hello
+    assert_equal 2, responder.hello_counter
+  end
+
+  def test_total_counter_increases_by_one_with_each_response
+    responder = Responder.new
+    responder.count_total
+    assert_equal 1, responder.total_counter
+
+    responder.count_total
+    assert_equal 2, responder.total_counter
+  end
+
+  def test_determine_response_grabs_proper_response
+    responder = Responder.new
+    assert_equal "#{Time.now.strftime('%I:%M%p on %A, %B%e, %Y')}", responder.determine_response("/datetime")
+  end
+
+  def test_determine_response_includes_hash_of_responses
+    responder = Responder.new
+    assert_equal "#{Time.now.strftime('%I:%M%p on %A, %B%e, %Y')}", responder.determine_response("/datetime")
   end
 end

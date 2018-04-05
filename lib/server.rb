@@ -11,11 +11,7 @@ class Server
 
   def run
     loop do
-      puts """
-      Please choose a path:
-      /, /hello, /datetime, or /shutdown
-      """
-      print ">>"
+      intro
       path = gets.chomp
       @connection = @tcp_server.accept
       populate_lines
@@ -24,6 +20,14 @@ class Server
       exit while path == "/shutdown"
     end
     @connection.shutdown(:WR)
+  end
+
+  def intro
+    puts """
+    Please choose a path:
+    /, /hello, /datetime, or /shutdown
+    """
+    print ">>"
   end
 
   def populate_lines
