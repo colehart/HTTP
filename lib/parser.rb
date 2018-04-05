@@ -6,20 +6,20 @@ class Parser
   end
 
   def parse_lines
-    response = "<pre>" + @request_lines.join("\n") + "</pre>"
-  end
+    request_words = @request_lines.map do |line|
+      line.split(' ')
+    end
 
-  def default_lines
-    """
-    <pre>
-    Verb: POST
-    Path: /
-    Protocol: HTTP/1.1
-    Host: 127.0.0.1
-    Port: 9292
-    Origin: 127.0.0.1
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-    </pre>
-    """
+response = """
+<pre>
+Verb: #{request_words[0][0]}
+Path: #{request_words[0][1]}
+Protocol: #{request_words[0][2]}
+Host: #{request_words[1][1].split(':')[0]}
+Port: #{request_words[1][1].split(':')[1]}
+Origin: #{request_words[1][1].split(':')[0]}
+Accept: #{request_words[6][1]}
+</pre>
+"""
   end
 end
