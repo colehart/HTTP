@@ -1,7 +1,5 @@
 require 'socket'
-require 'pry'
 class Server
-  attr_reader :path
 
   def initialize(port)
     @tcp_server = TCPServer.new(port)
