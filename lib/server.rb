@@ -5,10 +5,11 @@ class Server
     @tcp_server = TCPServer.new(port)
     @connection = nil
     @responder = Responder.new
+    @parser = Parser.new
   end
 
   def run
-    loop do # not sure when it would end
+    loop do
       @connection = @tcp_server.accept
       populate_lines
       respond
@@ -20,9 +21,9 @@ class Server
     line = @connection.gets.chomp
     until line.empty?
       line = @connection.gets.chomp
-      @responder.request_lines << line
+      @parser.request_lines << line
     end
-    p @responder.request_lines
+    p @parser.request_lines
   end
 
   def respond

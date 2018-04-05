@@ -1,12 +1,10 @@
 class Responder
-  attr_reader :counter,
-              :request_lines
+  attr_reader :counter
 
   def initialize
     @counter = 0
-    @request_lines = []
   end
-
+#instantiate Parser to get request_lines_to_pop_header/output
   def print_header
     header = ["http/1.1 200 ok"]
     # header
