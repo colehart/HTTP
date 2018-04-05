@@ -1,22 +1,6 @@
 module Parser
-  attr_reader :request_lines,
-              :hello_counter,
-              :total_counter
-=begin
-  def determine_response(path)
-    if path == "/"
-      default_response
-    elsif path == "/hello"
-      hello_response
-    elsif path == "/datetime"
-      datetime_response
-    elsif path == "/shutdown"
-      shutdown_response
-    end
-  end
-=end
-# =begin
-  # hash idea for no if conditional/to clean up.
+  attr_reader :request_lines
+
   def determine_response(path)
     possible_responses = {
       "/": default_response,
@@ -26,7 +10,7 @@ module Parser
     }
     possible_responses[path.to_sym]
   end
-# =end
+
   def default_response
     request_words = @request_lines.map do |line|
       line.split(' ')

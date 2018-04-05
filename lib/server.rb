@@ -37,7 +37,7 @@ class Server
     @responder.determine_response(path)
     @connection.puts @responder.print_header
     @connection.puts @responder.print_output(path)
-    @responder.count_total
+    path == "/hello" ? (@responder.count_hello & @responder.count_total) : @responder.count_total
   end
 
   # def close_connection
