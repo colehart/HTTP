@@ -1,14 +1,15 @@
 module Parser
   attr_reader :request_lines
 
-  def determine_response(path)
-    possible_responses = {
-      "/": default_response,
-      "/hello": hello_response,
-      "/datetime": datetime_response,
-      "/shutdown": shutdown_response
-    }
-    possible_responses[path.to_sym]
+  def validate(path)
+    possible_paths = ["/", "/hello", "/datetime", "/shutdown"]
+    possible_paths.any? { |word| word == path } ? path : enter_valid_path
+  end
+
+  def enter_valid_path
+    print "enter valid path >>"
+    path = gets.chomp
+    validate(path)
   end
 
   def default_response

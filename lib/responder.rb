@@ -7,6 +7,16 @@ class Responder
     @request_lines = []
     @hello_counter = 0
     @total_counter = 0
+    @possible_responses = {
+      "/": default_response,
+      "/hello": hello_response,
+      "/datetime": datetime_response,
+      "/shutdown": shutdown_response
+    }
+  end
+
+  def determine_response(path)
+    @possible_responses[path.to_sym]
   end
 
   def print_header
