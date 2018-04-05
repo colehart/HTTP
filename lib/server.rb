@@ -4,6 +4,7 @@ class Server
   def initialize(port)
     @tcp_server = TCPServer.new(port)
     @connection = nil
+    @responder = Responder.new
   end
 
   def run
@@ -16,21 +17,19 @@ class Server
   end
 
   def populate_lines
-    parser = Parser.new
     line = @connection.gets.chomp
-    parser.request_lines << line
+    @responder.request_lines << line
     until line.empty?
       line = @connection.gets.chomp
-      parser.request_lines << line
+      @responder.request_lines << line
     end
-    parser.parse_lines
+    @responder.parse_lines
   end
 
   def respond
-    responder = Responder.new
-    @connection.puts responder.print_header
-    @connection.puts responder.print_output
-    responder.count
+    @connection.puts @responder.print_header
+    @connection.puts @responder.print_output
+    @responder.count
   end
 
   # def close_connection
